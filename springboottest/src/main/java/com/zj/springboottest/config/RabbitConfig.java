@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.zj.springboottest;
+package com.zj.springboottest.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
