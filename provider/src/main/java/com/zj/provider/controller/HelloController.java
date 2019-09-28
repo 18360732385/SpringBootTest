@@ -21,12 +21,14 @@ public class HelloController {
     //@CrossOrigin(value="http://localhost:8081")
     @GetMapping("/hello")
     public String hello() {
+        System.out.println("get hello");
         return  "hello";
     }
 
     //@CrossOrigin(value="http://localhost:8081")
     @PostMapping("/hello")
     public String hello2() {
+        System.out.println("post hello");
         return "post hello";
     }
 

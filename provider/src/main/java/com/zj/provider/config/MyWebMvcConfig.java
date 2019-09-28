@@ -14,15 +14,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-//解决跨域请求
+
+/**
+ * 解决跨域问题Cors
+ * allowedOrigins字段可以指定跨域地址
+ * 不写或*表示全部通过
+ */
 @Configuration
 public class MyWebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedHeaders("*")
-                .allowedMethods("*")
-                //.allowedOrigins("http://localhost:8081");
-                .allowedOrigins("*");
+                .allowedMethods("*");
+                //.allowedOrigins("http://localhost:8082");
+                //.allowedOrigins("*");
     }
 }
