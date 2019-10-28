@@ -51,14 +51,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            .and()
 //            .withUser("lisi").roles("user").password("$2a$10$p1H8iWa8I4.CA.7Z8bwLjes91ZpY.rYREGHQEInNtAp4NzL6PLKxi");
 
-        auth.userDetailsService(userService);
+        auth.userDetailsService(userService)
+            .passwordEncoder(new BCryptPasswordEncoder());
     }
 
-    @Bean
-    PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder(10);
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+////        return NoOpPasswordEncoder.getInstance();
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
