@@ -23,7 +23,7 @@ public class SpringboottestApplicationTests {
 
     @Test
     public void testUpload() throws FileNotFoundException {
-        File file = new File("D:\\Downloads\\saber.jpeg");
+        File file = new File("D:\\Downloads\\壁纸头像\\saber.jpeg");
         // 上传并且生成缩略图
         StorePath storePath = storageClient.uploadFile(
                 new FileInputStream(file), file.length(), "png", null);
