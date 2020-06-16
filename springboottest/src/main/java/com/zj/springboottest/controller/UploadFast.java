@@ -21,7 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 @RestController
-public class uploadFast {
+public class UploadFast {
     @Autowired
     private FastFileStorageClient storageClient;
 

@@ -23,7 +23,7 @@ public class MyApplicationRunner implements ApplicationRunner {
     Receiver receiver;
 
     @Override
-    public void run(ApplicationArguments var1) throws Exception{
+    public void run(ApplicationArguments var1) throws Exception {
         System.out.println("===========自启动==========");
 
     }

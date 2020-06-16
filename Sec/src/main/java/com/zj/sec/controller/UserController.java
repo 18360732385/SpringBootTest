@@ -24,7 +24,7 @@ public class UserController {
     @PostMapping("/doLogin")
     public UserDetails doLogin(String username, String password) {
         UserDetails userDetails = userService.loadUserByUsername(username);
-        System.out.println("UserController: "+userDetails.toString());
+        System.out.println("UserController: " + userDetails.toString());
         return userDetails;
     }
 }

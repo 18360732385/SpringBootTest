@@ -33,17 +33,16 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
     /**
      * @param o
      * @return
-     * @throws IllegalArgumentException
-     * 获取当前请求路径，需要的角色权限
+     * @throws IllegalArgumentException 获取当前请求路径，需要的角色权限
      */
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
-        System.out.println("请求路径： "+requestUrl);
+        System.out.println("请求路径： " + requestUrl);
 
         List<String> roleOfPath = pathMapper.getPathByRole();
-        for (String path:roleOfPath){
-            if (antPathMatcher.match(path,requestUrl)){
+        for (String path : roleOfPath) {
+            if (antPathMatcher.match(path, requestUrl)) {
 
             }
         }

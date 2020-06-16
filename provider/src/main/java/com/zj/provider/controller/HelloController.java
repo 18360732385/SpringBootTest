@@ -22,7 +22,7 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
         System.out.println("get hello");
-        return  "hello";
+        return "hello";
     }
 
     //@CrossOrigin(value="http://localhost:8081")

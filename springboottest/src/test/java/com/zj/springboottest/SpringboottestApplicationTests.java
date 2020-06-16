@@ -37,7 +37,7 @@ public class SpringboottestApplicationTests {
     public void testUploadAndCreateThumb() throws FileNotFoundException {
         //删除文件
         storageClient.deleteFile("group1/M00/00/00/wKgCAl1NdvSAdgtqAAPunpGIcfw630.png");
-        System.out.println("删除结果：" +"删除成功"+"删除失败");
+        System.out.println("删除结果：" + "删除成功" + "删除失败");
     }
 
 

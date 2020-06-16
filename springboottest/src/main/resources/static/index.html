@@ -16,13 +16,11 @@
         });
     }
 
-    function btnClick2()
-    {
+    function btnClick2() {
 
         $.post('http://localhost:8080/hello',
             function
-                (msg)
-            {
+                (msg) {
 
                 $("#app").html(msg);
 

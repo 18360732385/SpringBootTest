@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            .withUser("lisi").roles("user").password("$2a$10$p1H8iWa8I4.CA.7Z8bwLjes91ZpY.rYREGHQEInNtAp4NzL6PLKxi");
 
         auth.userDetailsService(userService)
-            .passwordEncoder(new BCryptPasswordEncoder());
+                .passwordEncoder(new BCryptPasswordEncoder());
     }
 
 //    @Bean
@@ -66,32 +66,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.addFilterBefore(verifyCodeFilter, UsernamePasswordAuthenticationFilter.class);
 
         http
-        .authorizeRequests()//开启登录配置
-        .antMatchers("/admin/**").hasRole("admin")//表示访问hello接口，需要admin权限
-        .antMatchers("/db/**").hasRole("dba")
-        .antMatchers("/user/**").hasRole("user")
-        .anyRequest().authenticated()//表示其他接口登录后就能访问
+                .authorizeRequests()//开启登录配置
+                .antMatchers("/admin/**").hasRole("admin")//表示访问hello接口，需要admin权限
+                .antMatchers("/db/**").hasRole("dba")
+                .antMatchers("/user/**").hasRole("user")
+                .anyRequest().authenticated()//表示其他接口登录后就能访问
 
-        .and()
-        .formLogin()
-        //.loginPage("/login") //定义登录界面
-        .loginProcessingUrl("/login")//登录处理接口
-        .successHandler(myAuthenticationSuccessHandler)//登录成功处理器
-        .failureHandler(myAuthenticationFailureHandler)//登录失败处理器
-        .permitAll()//和表单登录相关接口全部放行
+                .and()
+                .formLogin()
+                //.loginPage("/login") //定义登录界面
+                .loginProcessingUrl("/login")//登录处理接口
+                .successHandler(myAuthenticationSuccessHandler)//登录成功处理器
+                .failureHandler(myAuthenticationFailureHandler)//登录失败处理器
+                .permitAll()//和表单登录相关接口全部放行
 
-        .and()
-        .logout()
-        .logoutUrl("/logout")
+                .and()
+                .logout()
+                .logoutUrl("/logout")
 //        .logoutSuccessHandler(null)//登出成功处理器
-        .permitAll()
+                .permitAll()
 
-        .and()
-        .httpBasic().authenticationEntryPoint(myAuthenticationEntryPoint)//用户未登陆处理器
+                .and()
+                .httpBasic().authenticationEntryPoint(myAuthenticationEntryPoint)//用户未登陆处理器
 
-        .and()
-        .csrf().disable();//去掉csrf
-
+                .and()
+                .csrf().disable();//去掉csrf
 
 
     }

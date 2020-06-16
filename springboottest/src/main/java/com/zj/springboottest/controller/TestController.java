@@ -22,8 +22,8 @@ public class TestController {
 
     @PostMapping("/test")
     //注解不要加，在参数类型前边加上
-    public  String test(@ParamsNotNull String userId, @RequestParam String name){
-        return  "ok";
+    public String test(@ParamsNotNull String userId, @RequestParam String name) {
+        return "ok";
     }
 }
 

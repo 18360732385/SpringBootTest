@@ -29,9 +29,9 @@ public class VerifyCodeController {
     public void code(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         //定义图形验证码的长和宽
-        LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100,6,60);
+        LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100, 6, 60);
         //存入redis中，这里简单放入session
-        request.getSession().setAttribute("verCode",lineCaptcha.getCode());
+        request.getSession().setAttribute("verCode", lineCaptcha.getCode());
 
         lineCaptcha.write(response.getOutputStream());
     }

@@ -16,9 +16,11 @@ import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.context.annotation.Import;
 import org.springframework.jmx.support.RegistrationPolicy;
 
+/**
+ * 解决jmx重复注册bean的问题
+ */
 @Configuration
 @Import(FdfsClientConfig.class)
-// 解决jmx重复注册bean的问题
 @EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 public class FastClient {//类名无特定限制
 

@@ -27,7 +27,7 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedHeaders("*")
                 .allowedMethods("*");
-                //.allowedOrigins("http://localhost:8082");
-                //.allowedOrigins("*");
+        //.allowedOrigins("http://localhost:8082");
+        //.allowedOrigins("*");
     }
 }

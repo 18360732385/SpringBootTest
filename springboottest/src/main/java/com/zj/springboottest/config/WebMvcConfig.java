@@ -18,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
     CheckParamsInterceptor checkSourceInterceptor = new CheckParamsInterceptor();
+
     //增加校验拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

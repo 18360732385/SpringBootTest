@@ -44,10 +44,9 @@ public class CheckParamsInterceptor extends HandlerInterceptorAdapter {
         List<String> list = getParamterName((HandlerMethod) handler);
 
 
-
         for (String s : list) {
             String parameter = request.getParameter(s);
-            System.out.println(s+"======"+parameter);
+            System.out.println(s + "======" + parameter);
             if (StringUtils.isEmpty(parameter)) {
                 JSONObject jsonObject = new JSONObject();
                 //这个地方是定义缺少参数或者参数为空的时候返回的数据
@@ -78,7 +77,7 @@ public class CheckParamsInterceptor extends HandlerInterceptorAdapter {
         return list;
     }
 
-    public static List<String> getParamterName(HandlerMethod handlerMethod){
+    public static List<String> getParamterName(HandlerMethod handlerMethod) {
         LocalVariableTableParameterNameDiscoverer u = new LocalVariableTableParameterNameDiscoverer();
         Method method = ((HandlerMethod) handlerMethod).getMethod();
 

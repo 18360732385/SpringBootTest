@@ -5,11 +5,11 @@
 <mapper namespace="com.zj.sec.mapper.UserMapper">
     <select id="loadUserByUsername" parameterType="String" resultType="User">
         select * from user
-          where username=#{username}
+        where username=#{username}
     </select>
 
     <select id="getUserRolesByUid" parameterType="int" resultType="com.zj.sec.entity.Role">
         select * from role r,user_role ur
-          where r.id=ur.rid and ur.uid=#{id}
+        where r.id=ur.rid and ur.uid=#{id}
     </select>
 </mapper>

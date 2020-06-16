@@ -26,12 +26,12 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userMapper.loadUserByUsername(username);
-        if (null == user){
+        if (null == user) {
             throw new UsernameNotFoundException("账户不存在！");
         }
 
         user.setRoles(userMapper.getUserRolesByUid(user.getId()));
-        System.out.println("UserService: "+user.toString());
+        System.out.println("UserService: " + user.toString());
         return user;
     }
 }
