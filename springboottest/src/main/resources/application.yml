@@ -24,3 +24,11 @@ fdfs:
       multipart:
         max-file-size: 100MB # 最大支持文件大小
         max-request-size: 100MB # 最大支持请求大小
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: praise-group
+server:
+  port: 10000
+

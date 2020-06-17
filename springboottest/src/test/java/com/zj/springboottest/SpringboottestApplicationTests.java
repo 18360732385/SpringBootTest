@@ -2,6 +2,7 @@ package com.zj.springboottest;
 
 import com.github.tobato.fastdfs.domain.StorePath;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
+import com.zj.springboottest.controller.MessageController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class SpringboottestApplicationTests {
 
     @Autowired
     private FastFileStorageClient storageClient;
+    @Autowired
+    private MessageController messageController;
 
 
     @Test
@@ -40,5 +43,8 @@ public class SpringboottestApplicationTests {
         System.out.println("删除结果：" + "删除成功" + "删除失败");
     }
 
-
+    @Test
+    public void test1() {
+        messageController.praise("我是谁");
+    }
 }
